@@ -1,8 +1,9 @@
 
+"use client"
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { Github, Linkedin, Facebook, Send, Briefcase, ChevronRight, Sparkles } from 'lucide-react';
-import Starfield from '../../Components/Starfield';
-
+import { Send, Briefcase, ChevronRight, Sparkles } from 'lucide-react';
+import Starfield from '../Components/Starfield';
+import { FaFacebook , FaGithub, FaLinkedin } from 'react-icons/fa';
 // --- 1. CUSTOM TYPING EFFECT HOOK ---
 const useTypewriter = (words, speed = 100, delay = 2000) => {
   const [index, setIndex] = useState(0);
@@ -97,9 +98,9 @@ const Home = () => {
         <div className="flex flex-row md:flex-col items-center gap-8">
           <div className="hidden md:block w-[1px] h-20 bg-gradient-to-t from-indigo-500      to-transparent"></div>
 
-          <SocialIcon href="https://github.com/RimshaArfeen" icon={<Github size={22} />} label="GitHub" />
-          <SocialIcon href="https://www.linkedin.com/in/rimsha-arfeen-b25709305" icon={<Linkedin size={22} />} label="LinkedIn" />
-          <SocialIcon href="#" icon={<Facebook size={22} />} label="Facebook" />
+          <SocialIcon href="https://github.com/RimshaArfeen" icon={<FaGithub size={22} />} label="GitHub" />
+          <SocialIcon href="https://www.linkedin.com/in/rimsha-arfeen-b25709305" icon={<FaLinkedin size={22} />} label="LinkedIn" />
+          <SocialIcon href="#" icon={<FaFacebook size={22} />} label="Facebook" />
           <SocialIcon href="#" icon={<Sparkles size={22} />} label="Awards" />
 
           <div className="hidden md:block w-[1px] h-20 bg-gradient-to-b from-indigo-500 to-transparent"></div>
