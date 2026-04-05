@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import ProjectDetail from '../portfolio/ProjectDetail';
 import { DATA } from "../portfolio/Data";
-
+import Image from 'next/image';
 
 
 const PortfolioSection = () => {
@@ -54,16 +54,21 @@ const PortfolioSection = () => {
         {/* Web Projects Grid */}
         {selectedCategory === "Web" ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {DATA.portfolio.map((item) => (
+            {DATA.portfolio.map((item, index) => (
               <div
                 key={item.id}
                 className="group relative h-[450px] rounded-3xl overflow-hidden cursor-pointer"
                 onClick={() => setSelectedProject(item)}
               >
-                <img
+                <Image
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
                   src={item.imgUrl}
+                  priority={index < 2} // Load first 2 images immediately
+                  loading={index < 2 ? "eager" : "lazy"}
+                  quality={85} // Optimize quality vs size
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"></div>
 
@@ -92,15 +97,19 @@ const PortfolioSection = () => {
         ) : (
           /* Graphic Design Grid */
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {DATA.graphics.map((item) => (
+            {DATA.graphics.map((item, index) => (
               <div
                 key={item.id}
                 className="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900"
               >
-                <img
+                <Image
                   alt={item.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                   src={item.imgUrl}
+                  loading="lazy"
+                  quality={80}
                 />
                 <div className="absolute inset-0 bg-indigo-900/60 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center p-6 text-center">
                   <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">

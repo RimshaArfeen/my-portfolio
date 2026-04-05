@@ -34,7 +34,7 @@ const Footer = () => {
           name: "LinkedIn", href: "https://www.linkedin.com/in/rimsha-arfeen-b25709305"
         },
         { name: "GitHub", href: "https://github.com/RimshaArfeen" },
-        { name: "Contact", href: "#contact" }
+        { name: "Contact", href: "contact" }
       ]
     }
   ];
