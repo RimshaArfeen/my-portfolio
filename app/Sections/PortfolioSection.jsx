@@ -19,7 +19,7 @@ const PortfolioSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("Web");
 
   return (
-    <section id="portfolio" className="relative py-32 z-10  overflow-hidden">
+    <section id="portfolio" className={`relative py-32  overflow-hidden ${selectedProject ? 'z-50' : 'z-10'}`}>
       <div className="container mx-auto px-6 lg:px-24">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div className="space-y-4">

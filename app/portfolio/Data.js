@@ -3,6 +3,7 @@ const echo_journal = "/Images/echo_journal.png"
 const ProdLandingPage = "/Images/ProdLandingPage.png"
 const scholarshipApplicationSys = "/Images/scholarshipApplicationSys.png"
 const SpicyBazaar = "/Images/SpicyBazaar.png"
+const PMP = "/Images/PMP.png"
 
 // Graphic Designing
 const PP = "/Images/pp.jpeg"
@@ -16,7 +17,18 @@ const Poster = "/Images/poster.jpg"
 export const DATA = {
   portfolio: [
     {
-      id: 1,
+      id: 1, // Ensure this matches your sequence
+      title: "ProFlow | Project Management Portal",
+      category: "Web",
+      imgUrl: PMP,
+      img2: PMP,
+      link: "#", // Update with your actual deployment link
+      description:
+        "A sophisticated, role-based management system designed to bridge the gap between team leads, members, and supervisors.\n\nKey Features:\n- Role-based Dashboards (CEO, Project Manager, TeamLead, Developer)\n- Real-time Milestone Tracking & Approval Workflows\n- Automated Task Allocation & Progress Analytics\n- Secure File Versioning & Integrated Team Communication",
+      tags: ["Next.js", "Prisma", "MongoDB", "Tailwind CSS"]
+    },
+    {
+      id: 2,
       title: " Echo Journal | Full Stack Blog Website",
       category: "Web",
       imgUrl: echo_journal,
@@ -27,7 +39,7 @@ export const DATA = {
       tags: ["Next.js", "MongoDB", "Prisma", "Vercel"]
     },
     {
-      id: 2,
+      id: 3,
       title: "SpicyBazaar | E-Commerce Platform",
       category: "Web",
       imgUrl: SpicyBazaar,
@@ -38,7 +50,7 @@ export const DATA = {
       tags: ["Next.js", "Tailwind", "Prisma", "MongoDB"]
     },
     {
-      id: 3,
+      id: 4,
       title: "Scholarship Management System",
       category: "Web",
       imgUrl: scholarshipApplicationSys,
@@ -50,7 +62,7 @@ export const DATA = {
     },
    
     {
-      id: 4,
+      id: 5,
       title: "Nesta Coffee",
       category: "Web",
       imgUrl: ProdLandingPage,
